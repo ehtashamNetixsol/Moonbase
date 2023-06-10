@@ -10,15 +10,17 @@ import Button from "./Button";
 const Navbar = () => {
   let [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="flex gap-1 md:gap-5 justify-evenly items-center py-5">
-      <div className="flex gap-4">
+    <nav className="flex gap-1 md:gap-5 justify-evenly items-center 3xl:py-8 py-4">
+      <div className="flex gap-16">
+        <Link href="/">
         <Image
           src="/assets/images/logo 1.svg"
           alt="moonbase_logo"
           height={41}
-          width={250}
+          width={349}
         />
-        <ul className="lg:flex hidden lg:justify-between lg:gap-4 text-white text-xl">
+        </Link>
+        <ul className="lg:flex hidden lg:justify-between lg:gap-4 3xl:gap-12 3xl:text-2xl text-white text-xl">
           <li>Swap</li>
           <li>Pool</li>
           <li>IDO Launchpad</li>
@@ -28,9 +30,9 @@ const Navbar = () => {
       {/* Toggle button for mobile screens */}
 
       <div className="block lg:hidden">
-        <button class="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-white hover:border-white">
+        <button className="flex items-center px-3 py-2 border rounded text-primary border-primary hover:text-white hover:border-white">
           <svg
-            class="fill-current h-3 w-3"
+            className="fill-current h-3 w-3"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -40,9 +42,9 @@ const Navbar = () => {
         </button>
       </div>
 
-      <div className="lg:flex hidden gap-3">
+      <div className="lg:flex hidden gap-8">
         <button
-          className="flex items-center gap-1 bg-primary px-3 py-1 rounded-[15px] font-semibold cursor-pointer"
+          className="flex items-center justify-center gap-1 3xl:w-[11.69rem] 3xl:h-[3.7rem] bg-primary 3xl:px-1 px-3 py-1 rounded-[15px] cursor-pointer"
           type="button"
           onClick={() => {
             setIsOpen(true);
@@ -50,23 +52,23 @@ const Navbar = () => {
         >
           <Image
             src="/assets/images/favicon.png"
-            height={20}
-            width={20}
-            alt="favicon"
+            height={30}
+            width={30}
+            alt="portfolioIcon"
           />
-          polygon
-          <FaAngleDown />
+          <span className="font-bold text-lg">polygon</span>
+          <FaAngleDown size={25}/>
         </button>
 
         {/* Modal popup */}
         <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
 
-        <button className="flex items-center gap-2 border-2 border-primary rounded-[0.7rem] py-[0.5px] px-[1px]">
-          <div className="text-white px-2">
-            <span>0</span>
+        <button className="flex items-center gap-2 3xl:w-[19.25rem] 3xl:h-[3.75rem] 3xl:justify-between border-2 border-primary rounded-[0.7rem] py-[0.5px] px-[1px]">
+          <div className="text-white px-2 3xl:text-[1.4rem]">
+            <span className="m-[0.63rem]">0</span>
             <span>mRock</span>
           </div>
-          <span className="bg-primary py-[12px] rounded-[0.5rem] font-semibold text-sm px-4">
+          <span className="bg-primary py-[12px] 3xl:pt-[17px] 3xl:pb-[12px] rounded-[0.5rem] font-semibold px-4">
             0x752319...93fff
           </span>
         </button>
@@ -74,8 +76,8 @@ const Navbar = () => {
         <button>
           <Image
             src="/assets/images/Vector.svg"
-            width={25}
-            height={25}
+            width={30}
+            height={30}
             alt="settings"
           />
         </button>
